@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "~/utils/cn";
 
 const stackVariants = cva("flex flex-col", {
@@ -10,7 +10,6 @@ const stackVariants = cva("flex flex-col", {
       md: "gap-6",
       lg: "gap-8",
       xl: "gap-12",
-      "2xl": "gap-16",
     },
 
     align: {
@@ -22,20 +21,39 @@ const stackVariants = cva("flex flex-col", {
   },
 
   defaultVariants: {
-    gap: "lg",
-    align: "stretch",
+    gap: "md",
+    align: "start",
   },
 });
 
-interface Props extends VariantProps<typeof stackVariants> {
-  class?: string;
-}
+type Gap = "xs" | "sm" | "md" | "lg" | "xl";
+type Align = "start" | "center" | "end" | "stretch";
 
-const props = defineProps<Props>();
+const props = withDefaults(
+  defineProps<{
+    gap?: Gap;
+    align?: Align;
+    class?: string;
+  }>(),
+  {
+    gap: "md",
+    align: "start",
+  }
+);
 </script>
 
 <template>
-  <div :class="cn(stackVariants(props), props.class)">
+  <div
+    :class="
+      cn(
+        stackVariants({
+          gap: props.gap,
+          align: props.align,
+        }),
+        props.class
+      )
+    "
+  >
     <slot />
   </div>
 </template>

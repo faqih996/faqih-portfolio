@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "~/utils/cn";
 
 const pillVariants = cva(
@@ -39,49 +39,57 @@ const pillVariants = cva(
       {
         variant: "soft",
         color: "gray",
-        class: "bg-zinc-100 text-zinc-700 border-zinc-200 hover:bg-zinc-200",
+        class:
+          "bg-zinc-100 text-zinc-700 border-zinc-200 hover:bg-zinc-200",
       },
 
       {
         variant: "soft",
         color: "blue",
-        class: "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
+        class:
+          "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
       },
 
       {
         variant: "soft",
         color: "green",
-        class: "bg-green-50 text-green-700 border-green-200 hover:bg-green-100",
+        class:
+          "bg-green-50 text-green-700 border-green-200 hover:bg-green-100",
       },
 
       {
         variant: "soft",
         color: "amber",
-        class: "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100",
+        class:
+          "bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100",
       },
 
       {
         variant: "soft",
         color: "red",
-        class: "bg-red-50 text-red-700 border-red-200 hover:bg-red-100",
+        class:
+          "bg-red-50 text-red-700 border-red-200 hover:bg-red-100",
       },
 
       {
         variant: "outline",
         color: "gray",
-        class: "border-zinc-300 text-zinc-700 hover:bg-zinc-50",
+        class:
+          "border-zinc-300 text-zinc-700 hover:bg-zinc-50",
       },
 
       {
         variant: "solid",
         color: "gray",
-        class: "bg-zinc-900 text-white border-zinc-900",
+        class:
+          "bg-zinc-900 text-white border-zinc-900",
       },
 
       {
         variant: "glass",
         color: "gray",
-        class: "bg-white/60 border-white/40 shadow-lg",
+        class:
+          "bg-white/60 border-white/40 shadow-lg",
       },
     ],
 
@@ -93,15 +101,38 @@ const pillVariants = cva(
   },
 );
 
-interface Props extends VariantProps<typeof pillVariants> {
-  class?: string;
-}
+type Variant = "solid" | "soft" | "outline" | "glass";
+type Color = "gray" | "blue" | "green" | "amber" | "red";
+type Size = "sm" | "md" | "lg";
 
-const props = defineProps<Props>();
+const props = withDefaults(
+  defineProps<{
+    variant?: Variant;
+    color?: Color;
+    size?: Size;
+    class?: string;
+  }>(),
+  {
+    variant: "soft",
+    color: "gray",
+    size: "md",
+  }
+);
 </script>
 
 <template>
-  <div :class="cn(pillVariants(props), props.class)">
+  <div
+    :class="
+      cn(
+        pillVariants({
+          variant: props.variant,
+          color: props.color,
+          size: props.size,
+        }),
+        props.class
+      )
+    "
+  >
     <slot />
   </div>
 </template>

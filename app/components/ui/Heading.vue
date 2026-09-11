@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "~/utils/cn";
 
-const headingVariants = cva("", {
+const headingVariants = cva("space-y-4", {
   variants: {
     align: {
       left: "text-left",
@@ -17,39 +17,67 @@ const headingVariants = cva("", {
   },
 
   defaultVariants: {
-    align: "center",
+    align: "left",
     size: "md",
   },
 });
 
-interface Props extends VariantProps<typeof headingVariants> {
-  eyebrow?: string;
+type Align = "left" | "center";
+type Size = "sm" | "md" | "lg";
 
-  title: string;
-
-  subtitle?: string;
-
-  class?: string;
-}
-
-const props = defineProps<Props>();
+const props = withDefaults(
+  defineProps<{
+    eyebrow?: string;
+    subtitle?: string;
+    align?: Align;
+    size?: Size;
+    class?: string;
+  }>(),
+  {
+    align: "left",
+    size: "md",
+  }
+);
 </script>
 
 <template>
-  <div :class="cn('space-y-4', headingVariants(props), props.class)">
+  <div
+    :class="
+      cn(
+        headingVariants({
+          align: props.align,
+          size: props.size,
+        }),
+        props.class
+      )
+    "
+  >
     <p
-      v-if="eyebrow"
-      class="uppercase tracking-[0.3em] text-sm text-accent font-medium"
+      v-if="props.eyebrow"
+      class="text-sm font-medium uppercase tracking-[0.3em] text-accent"
     >
-      {{ eyebrow }}
+      {{ props.eyebrow }}
     </p>
 
-    <h2 class="text-h2 font-bold text-foreground">
-      {{ title }}
+    <h2
+      :class="{
+        'text-h4': props.size === 'sm',
+        'text-h3': props.size === 'md',
+        'text-h2': props.size === 'lg',
+      }"
+      class="font-display font-bold text-foreground"
+    >
+      <slot />
     </h2>
 
-    <p v-if="subtitle" class="max-w-2xl mx-auto text-muted text-base">
-      {{ subtitle }}
+    <p
+      v-if="props.subtitle"
+      class="max-w-2xl text-base text-muted"
+      :class="{
+        'mx-auto': props.align === 'center',
+      }"
+    >
+      {{ props.subtitle }}
     </p>
   </div>
 </template>

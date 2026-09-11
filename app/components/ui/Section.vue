@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "~/utils/cn";
 
 const sectionVariants = cva("", {
@@ -11,30 +11,39 @@ const sectionVariants = cva("", {
       lg: "py-32",
       xl: "py-40",
     },
-
-    background: {
-      transparent: "",
-      surface: "bg-surface",
-      muted: "bg-zinc-50",
-    },
   },
 
   defaultVariants: {
     spacing: "lg",
-    background: "transparent",
   },
 });
 
-interface Props extends VariantProps<typeof sectionVariants> {
-  id?: string;
-  class?: string;
-}
+type Spacing = "none" | "sm" | "md" | "lg" | "xl";
 
-const props = defineProps<Props>();
+const props = withDefaults(
+  defineProps<{
+    id?: string;
+    spacing?: Spacing;
+    class?: string;
+  }>(),
+  {
+    spacing: "lg",
+  }
+);
 </script>
 
 <template>
-  <section :id="id" :class="cn(sectionVariants(props), props.class)">
+  <section
+    :id="props.id"
+    :class="
+      cn(
+        sectionVariants({
+          spacing: props.spacing,
+        }),
+        props.class
+      )
+    "
+  >
     <slot />
   </section>
 </template>

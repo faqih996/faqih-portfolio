@@ -1,75 +1,60 @@
 <script setup lang="ts">
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "~/utils/cn";
 
 const cardVariants = cva(
-  ["rounded-card", "border", "transition-all duration-300"],
+  "rounded-card border transition-all duration-300",
   {
     variants: {
       variant: {
-        default: "",
-        elevated: "",
-        outline: "",
-        glass: "",
+        default: "bg-white border-border shadow-card",
+        glass: "bg-white/70 backdrop-blur-xl border-white/30",
+        outline: "border-border bg-transparent",
       },
 
       padding: {
         none: "",
-        sm: "p-5",
-        md: "p-8",
-        lg: "p-10",
-      },
-
-      hover: {
-        true: "",
-        false: "",
+        sm: "p-4",
+        md: "p-6",
+        lg: "p-8",
       },
     },
-
-    compoundVariants: [
-      {
-        variant: "default",
-        class: "bg-background border-border shadow-card",
-      },
-
-      {
-        variant: "elevated",
-        class: "bg-background shadow-card-hover border-transparent",
-      },
-
-      {
-        variant: "outline",
-        class: "bg-background border-border",
-      },
-
-      {
-        variant: "glass",
-        class: "bg-white/70 backdrop-blur-xl border-white/40",
-      },
-
-      {
-        hover: true,
-        class: "hover:-translate-y-2 hover:shadow-card-hover",
-      },
-    ],
 
     defaultVariants: {
       variant: "default",
-      padding: "md",
-      hover: true,
+      padding: "lg",
     },
-  },
+  }
 );
 
-interface Props extends VariantProps<typeof cardVariants> {
-  class?: string;
-}
+type Variant = "default" | "glass" | "outline";
+type Padding = "none" | "sm" | "md" | "lg";
 
-const props = defineProps<Props>();
+const props = withDefaults(
+  defineProps<{
+    variant?: Variant;
+    padding?: Padding;
+    class?: string;
+  }>(),
+  {
+    variant: "default",
+    padding: "lg",
+  }
+);
 </script>
 
 <template>
-  <div :class="cn(cardVariants(props), props.class)">
+  <div
+    :class="
+      cn(
+        cardVariants({
+          variant: props.variant,
+          padding: props.padding,
+        }),
+        props.class
+      )
+    "
+  >
     <slot />
   </div>
 </template>
