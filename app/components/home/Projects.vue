@@ -17,7 +17,7 @@ const learningProjects = computed(() =>
       <UiHeading
         eyebrow="Featured Projects"
         title="Projects"
-        subtitle="List of featured portfolio."
+        subtitle="List of featured projects ."
       />
 
       <!-- Featured Projects -->

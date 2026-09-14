@@ -14,4 +14,18 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vueuse/nuxt",
   ],
+
+  app: {
+    head: {
+      title: "Faqih Syakir — Full Stack Web Developer",
+
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "images/icons/FSwebfavicon.png",
+        },
+      ],
+    },
+  },
 });

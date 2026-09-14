@@ -13,7 +13,8 @@ export const experiences: Experience[] = [
       "Developed and maintained internal web applications for student registration, payment management, training programs, and company operations.",
 
     achievements: [
-      "Developed and maintained internal web applications using Laravel, Livewire, Alpine.js, and MySQL.",
+      "Developed and maintained Sea Education web applications using Laravel, Livewire, Alpine.js, and MySQL.",
+      "Developed and maintained 3 internal web applications using Laravel, Livewire, Alpine.js, and MySQL.",
       "Optimized database queries and application logic, reducing response time by approximately 30%.",
       "Integrated REST APIs to support internal systems and third-party services.",
     ],

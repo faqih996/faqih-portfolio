@@ -20,6 +20,8 @@ const filteredCategories = computed(() => {
 
 const skillIcons: Record<string, string> = {
   // Frontend
+  Alphine: "simple-icons:alpinedotjs",
+  Livewire: "simple-icons:livewire",
   Vue: "simple-icons:vuedotjs",
   Nuxt: "simple-icons:nuxtdotjs",
   React: "simple-icons:react",
@@ -38,7 +40,7 @@ const skillIcons: Record<string, string> = {
   "REST API": "mdi:api",
 
   // Tools
-  GitHub: "simple-icons:git",
+  GitHub: "simple-icons:github",
   Docker: "simple-icons:docker",
   Postman: "simple-icons:postman",
   Notion: "simple-icons:notion",

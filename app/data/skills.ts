@@ -3,6 +3,8 @@ export const skillCategories = [
     title: "Frontend",
     description: "Creating responsive and interactive user interfaces.",
     skills: [
+      "Alphine",
+      "Livewire",
       "Vue",
       "Nuxt",
       "React",
@@ -30,6 +32,6 @@ export const skillCategories = [
   {
     title: "Tools & Workflow",
     description: "Tools that support my development workflow.",
-    skills: ["Github", "Postman", "Notion", "Slack", "Claude", "n8n"],
+    skills: ["GitHub", "Postman", "Notion", "Slack", "Claude", "n8n"],
   },
 ];
