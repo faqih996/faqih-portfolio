@@ -60,7 +60,7 @@ function getSkillIcon(skill: string) {
       <!-- Heading -->
 
       <UiHeading
-        eyebrow="Expertise"
+        :words="['Expertise Skill', '専門的技能']"
         title="Skills"
         subtitle="Technologies and tools I use to build digital products."
       />

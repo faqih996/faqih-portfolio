@@ -15,13 +15,20 @@ const learningProjects = computed(() =>
   <UiSection id="projects" spacing="lg">
     <UiContainer>
       <UiHeading
-        eyebrow="Featured Projects"
-        title="Projects"
-        subtitle="List of featured projects ."
-      />
+        :words="['Selected Work', '制作したプロジェクト']"
+        align="left"
+      >
+        PROJECTS
+      </UiHeading>
+
+      <!-- Overview -->
+      <p class="mt-4 text-base leading-7 text-muted">
+        A collection of selected projects I've built across web development,
+        business systems, and digital products.
+      </p>
 
       <!-- Featured Projects -->
-      <div class="mt-20 space-y-10">
+      <div class="mt-16 space-y-8">
         <HomeProjectCard
           v-for="project in featuredProjects"
           :key="project.slug"
@@ -35,7 +42,11 @@ const learningProjects = computed(() =>
           <p
             class="text-sm font-medium uppercase tracking-[0.25em] text-accent"
           >
-            Learning Journey
+            <UiHeading
+              :words="['Learning Project', '学習プロジェクト']"
+              align="left"
+            >
+            </UiHeading>
           </p>
 
           <h3 class="mt-3 text-2xl font-bold text-foreground">

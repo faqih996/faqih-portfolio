@@ -110,7 +110,7 @@ onUnmounted(() => {
       <!-- Heading -->
 
       <UiHeading
-        eyebrow="Career Journey"
+        :words="['Career Journey', 'キャリアの歩み']"
         title="Experience"
         subtitle="My professional journey in web development and technology."
       />

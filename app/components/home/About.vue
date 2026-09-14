@@ -200,31 +200,21 @@ function formatNumber(number: number) {
 
         <div>
           <!-- Eyebrow -->
+          <UiHeading
+            :words="['A Little About Me', '私について']"
+            title="About"
+          />
 
-          <div class="mb-6 flex items-center gap-3">
-            <span class="h-px w-10 bg-accent" />
-
-            <span
-              class="text-sm font-semibold uppercase tracking-[0.3em] text-accent"
-            >
-              About Me
-            </span>
-          </div>
-
-          <!-- Heading -->
-
-          <h2
-            class="max-w-xl text-4xl font-bold leading-tight text-foreground md:text-5xl"
+          <h5
+            class="max-w-xl text-lg font-bold leading-tight text-foreground md:text-lg"
           >
-            Turning ideas into
-
-            <span class="text-accent"> real solutions. </span>
-          </h2>
+            Hi there,
+          </h5>
 
           <!-- Description -->
 
           <div
-            class="mt-8 max-w-xl space-y-5 text-base leading-8 text-muted md:text-lg"
+            class="mt-2 max-w-xl space-y-5 text-base leading-8 text-muted md:text-lg"
           >
             <p>
               I'm

@@ -57,7 +57,10 @@ const { locale } = useLocale();
               size="lg"
               variant="outline"
             >
-              <Icon name="lucide:download" class="mr-2 size-4" />
+              <Icon
+                name="lucide:download"
+                class="mr-2 size-4"
+              />
 
               Download CV
             </UiButton>
