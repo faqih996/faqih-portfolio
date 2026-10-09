@@ -43,6 +43,16 @@ const { scrolled } = useNavbar();
           <!-- Social Media -->
           <div class="flex items-center gap-3">
             <a
+              href="https://www.gmail.com/faqih.syakir11@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+              class="flex size-9 items-center justify-center rounded-full text-muted transition-all duration-300 hover:-translate-y-0.5 hover:bg-foreground hover:text-white"
+            >
+              <Icon name="simple-icons:gmail" class="size-4" />
+            </a>
+
+            <a
               href="https://github.com/faqih996"
               target="_blank"
               rel="noopener noreferrer"

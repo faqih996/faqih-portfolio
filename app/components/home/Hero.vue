@@ -45,7 +45,7 @@ const { locale } = useLocale();
             Hi, I'm
             <strong class="text-foreground"> Faqih Syakir Niam </strong>
 
-            — a Full Stack Web Developer passionate about building scalable web
+            — a Software Engineer passionate about building scalable
             applications, automation workflows and modern digital products.
           </p>
 
@@ -57,10 +57,7 @@ const { locale } = useLocale();
               size="lg"
               variant="outline"
             >
-              <Icon
-                name="lucide:download"
-                class="mr-2 size-4"
-              />
+              <Icon name="lucide:download" class="mr-2 size-4" />
 
               Download CV
             </UiButton>

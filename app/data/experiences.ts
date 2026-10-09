@@ -7,7 +7,7 @@ export const experiences: Experience[] = [
     employmentType: "Full Time",
     startDate: "February 2022",
     endDate: "May 2026",
-    current: true,
+    current: false,
 
     description:
       "Developed and maintained internal web applications for student registration, payment management, training programs, and company operations.",

@@ -16,10 +16,13 @@ const FaqihSyakir = {
   stack: [
     "Laravel",
     "React",
-    "Next.js",
     "Vue",
-    "Nuxt.js",
+    "Alpine",
     "Inertia.js"
+    "Next.js",
+    "Nuxt.js",
+    "Tailwind CSS",
+    "Golang",
     "Claude"
     "n8n",
     "Docker",

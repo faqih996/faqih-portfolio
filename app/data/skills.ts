@@ -3,7 +3,7 @@ export const skillCategories = [
     title: "Frontend",
     description: "Creating responsive and interactive user interfaces.",
     skills: [
-      "Alphine",
+      "Alpine",
       "Livewire",
       "Vue",
       "Nuxt",

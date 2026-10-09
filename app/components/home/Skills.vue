@@ -20,7 +20,7 @@ const filteredCategories = computed(() => {
 
 const skillIcons: Record<string, string> = {
   // Frontend
-  Alphine: "simple-icons:alpinedotjs",
+  Alpine: "simple-icons:alpinedotjs",
   Livewire: "simple-icons:livewire",
   Vue: "simple-icons:vuedotjs",
   Nuxt: "simple-icons:nuxtdotjs",
@@ -34,6 +34,7 @@ const skillIcons: Record<string, string> = {
   Laravel: "simple-icons:laravel",
   PHP: "simple-icons:php",
   Express: "simple-icons:express",
+  Golang: "simple-icons:go",
   Node: "simple-icons:nodedotjs",
   MySQL: "simple-icons:mysql",
   MongoDB: "simple-icons:mongodb",

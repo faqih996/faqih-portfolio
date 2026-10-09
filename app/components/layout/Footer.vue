@@ -27,9 +27,7 @@ const socialLinks = [
             FAQIH SYAKIR<span class="text-blue-600">.</span>
           </a>
 
-          <p class="mt-2 text-sm text-zinc-500">
-            Software Engineer · Backend Developer
-          </p>
+          <p class="mt-2 text-sm text-zinc-500">Software Engineer</p>
         </div>
 
         <!-- Social -->
