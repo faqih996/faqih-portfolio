@@ -43,7 +43,7 @@ const { scrolled } = useNavbar();
           <!-- Social Media -->
           <div class="flex items-center gap-3">
             <a
-              href="https://www.gmail.com/faqih.syakir11@gmail.com"
+              href="mailto:faqih.syakir11@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
