@@ -2,7 +2,7 @@ export const experiences: Experience[] = [
   {
     id: 1,
     company: "SEA Education International",
-    position: "Full Stack Web Developer",
+    position: "Software Engineer",
     location: "South Jakarta, Indonesia",
     employmentType: "Full Time",
     startDate: "February 2022",
@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
   {
     id: 2,
     company: "DNG Corporation",
-    position: "Freelance Web Developer",
+    position: "Fullstack Web Developer",
     location: "East Jakarta, Indonesia",
     employmentType: "Freelance",
     startDate: "August 2024",
